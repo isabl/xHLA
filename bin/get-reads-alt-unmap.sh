@@ -36,7 +36,7 @@ trap cleanup EXIT
 
 sambamba view \
   -f "bam" -h -p -l 0 -t $NCORE \
-  -F "unmapped or mate_is_unmapped or (ref_name == 'chr6' and (position > 29844528 and position < 33100696)) or ref_name =~ /^HLA|chr6.*alt/" \
+  -F "unmapped or mate_is_unmapped or (ref_name == '6' and (position > 29812305 and position < 33068473)) or ref_name =~ /^HLA|chr6.*alt/" \
   $IN | sambamba sort -p -n -t $NCORE -o - /dev/stdin |
   bamToFastq -i /dev/stdin -fq "${OUT}.1.fq" -fq2 "${OUT}.2.fq"
 

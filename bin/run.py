@@ -70,5 +70,8 @@ if __name__ == '__main__':
     done_final_path = join(args.output_path, '_SUCCESS')
     output_file(done_path, done_final_path)
 
+    if args.delete:
+        shutil.rmtree(join('hla-' + args.sample_id))
+
     logger.info('Successfully wrote output file')
     logger.info('HLA typing: shutting down.')
